@@ -11,5 +11,5 @@ COPY . /approot
 WORKDIR /approot
 RUN mkdir bin
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
-    go build -tags migrate -o ./bin/appexec ./cmd/app
+    go build -tags migrate -o ./bin/appexec main.go
 CMD ["./bin/appexec"]
